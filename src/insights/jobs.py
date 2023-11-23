@@ -13,7 +13,10 @@ class ProcessJobs:
         return self.jobs_list
 
     def get_unique_job_types(self) -> List[str]:
-        pass
+        job_types = set()
+        for job in self.jobs_list:
+            job_types.add(job["job_type"])
+        return job_types
 
     def filter_by_multiple_criteria(self) -> List[dict]:
         pass
@@ -22,3 +25,8 @@ class ProcessJobs:
 # instancia = ProcessJobs()
 # dado_lidos = instancia.read("data/jobs.csv")
 # print(dado_lidos)
+
+# instancia = ProcessJobs()
+# dados_lidos = instancia.read("data/jobs.csv")
+# tipos_empregos_unicos = instancia.get_unique_job_types()
+# print(tipos_empregos_unicos)
